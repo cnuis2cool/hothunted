@@ -4,6 +4,11 @@ import gql from "graphql-tag";
 
 import Hunt from './hunt';
 
+import {
+  Grid,
+  Segment
+} from 'semantic-ui-react';
+
 const Hunts = () => (
   <Query
     query={gql`
@@ -30,14 +35,12 @@ const Hunts = () => (
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
-        //   return data.edges.map(({ node, cursor }) => (
-        //     <div key={cursor}>
-        //       <p>{`name: ${node.name}, website: ${node.website}`}</p>
-        //     </div>
-        //   ));
-        return data.posts.edges.map((currentHunt) => (
-            <Hunt hunt={currentHunt} />
-        ));
+        
+          return data.posts.edges.map((currentHunt) => (
+            <div className="card-placement">
+              <Hunt hunt={currentHunt} />
+            </div>
+          ));
     }}
   </Query>
 );

@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import styled from 'styled-components';
+
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { createHttpLink } from 'apollo-link-http';
@@ -43,14 +45,16 @@ const client1 = new ApolloClient({
 const client = new ApolloClient({
   uri: 'https://api.producthunt.com/v2/api/graphql',
   headers: {
-    authorization: `Bearer ${process.env.REACT_APP_PH_KEY}` // TODO: Env variable doesn't work
+    authorization: 'Bearer ' //${process.env.REACT_APP_PH_KEY}` // TODO: Env variable doesn't work
   }
 });
 
 const App = () => (
-  <ApolloProvider client={client}>
+  <ApolloProvider client={client} className="App">
     <div>
-      <h2>Top Hunts</h2>
+      <header className="App-header">
+        <h2>Top Hunts</h2>
+      </header>
     </div>
     <div>
       <Hunts />
