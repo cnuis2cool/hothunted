@@ -34,6 +34,27 @@
   margin: 10px;
 }
 
+.ui.card {
+  margin-left: 1em;
+}
+
+.meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  height: 40px;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -35,12 +35,17 @@ const Hunts = () => (
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
-        
-          return data.posts.edges.map((currentHunt) => (
-            <div className="card-placement">
-              <Hunt hunt={currentHunt} />
-            </div>
-          ));
+      
+        return (
+        <div className="ui grid">
+          {
+            data.posts.edges.map((currentHunt) => (
+              <div className="four wide computer sixteen wide mobile eight wide tablet column">
+                <Hunt key={currentHunt.cursor} hunt={currentHunt} />
+              </div>
+            ))}
+        </div>
+      )
     }}
   </Query>
 );
