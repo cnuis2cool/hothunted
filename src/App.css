@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  margin-bottom: 2px;
+  margin-bottom: 1em;
 }
 
 .App-link {
@@ -34,8 +34,19 @@
   margin: 10px;
 }
 
+.ui.grid {
+  margin-top: .75em;
+}
+
+.columns {
+  margin-left: -.75rem;
+  margin-right: -.75rem;
+  margin-top: -.75rem;
+}
+
 .ui.card {
   margin-left: 1em;
+  padding: .75rem;
 }
 
 .meta {

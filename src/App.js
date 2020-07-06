@@ -53,7 +53,8 @@ const App = () => (
   <ApolloProvider client={client} className="App">
     <div>
       <header className="App-header">
-        <h2>Top Hunts</h2>
+        <h2>Hot Hunts</h2> 
+        <div className="meta"><h4>Today's Top 5 Products from ProductHunt</h4></div>
       </header>
     </div>
     <div>
