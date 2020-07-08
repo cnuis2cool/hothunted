@@ -12,7 +12,7 @@ import {
 const Hunts = () => (
   <Query
     query={gql`
-    query { posts(order: RANKING, first: 5) {
+    query { posts(order: RANKING, first: 10) {
         edges{
           cursor
           node{
@@ -37,7 +37,7 @@ const Hunts = () => (
       if (error) return <p>Error :(</p>;
       
         return (
-        <div className="ui grid">
+        <div className="ui stackable grid">
           {
             data.posts.edges.map((currentHunt) => (
               <div className="four wide computer sixteen wide mobile eight wide tablet column">
